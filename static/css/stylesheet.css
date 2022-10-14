@@ -1,0 +1,191 @@
+.center {
+    text-align: center;
+  }
+  
+
+
+body{
+  background-image: url("");
+}
+
+.textcolor{
+  
+  color: black
+}
+
+.textcolor1{
+  padding-top: 50px;
+ 
+}
+
+
+p{
+  font-size: 20px;
+}
+
+  /*image sizing */
+  
+  .responsive {
+    margin-top: -15px;
+    max-width: 100%;
+    height: 800px;
+  }
+  .responsivelogo{
+    margin-top: -18px;
+    max-width: 100%;
+    
+  }
+
+  .headerpadding{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+
+  /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+  .navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+  }
+  
+  /* Remove the jumbotron's default bottom margin */ 
+   .jumbotron {
+    margin-bottom: 0;
+  }
+ 
+  /* Add a gray background color and some padding to the footer */
+  footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+  }
+
+  
+  
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+
+
+
+   /* text on image learning section*/
+
+ .txtimg {
+  position: relative;
+  text-align: center;
+  color: white;
+ 
+}
+
+.textcentered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: black;
+
+}
+
+.learnimgsize{
+  margin-top: 20px;
+}
+
+
+
+/* Gray */
+.default {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.default:hover {
+  background: #e7e7e7;
+}
+
+
+
+
+
+
+
+/* Back to top button */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/* END BACK TO TOP BUTTON */
+
+  /*This is all about the footer */
+
+  .footer {
+    padding: 10px;
+    padding-top: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+ }
+
+ /* End Footer Settings
+
+
+
+
+
+/* #chart1 {
+  background-color: black;
+} */
+
+/* chart 1 column setting */
+
+* {
+  box-sizing: border-box;
+  
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* End chart 2 column setting 8?
+
+
+
