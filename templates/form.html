@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Social Icons Style Sheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+
+</head>
+
+<div class="center">
+    <h1> U.S LOAN APPROVAL PREDICTION</h1>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="/static/images/moneylogo.png" alt="Space" class="responsivelogo"
+                    width="50" height=""> </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class ="active" ><a href="form.html">Apply Now</a></li>
+                <li><a href="pairplot.html">Data</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="matrix.html">Matrix</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></span> Created by: David Salim | Erastus Chirchir | Liu Angela | Phuong Tieu | Brendan
+                        Woodward | Dante Company</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
+    <br>
+    <!-- Test-->
+    <div class="txtimg">
+        <div class="learnimgsize">
+            <img src="/static/images/loanapply.jpeg" alt="ApplyNow" class="responsive" width="2000" height="">
+        </div>
+        <div class="textcolor">
+            <div class="textcentered">
+                <h1>Apply For A Loan Today</h1>
+                <p>Results within 60 seconds</p>
+            </div>
+        </div>
+    </div>
+    <!--endtest-->
+
+    <BR>
+    <!--Form Section-->
+    <div class="container">
+        <div class="" style="text-align: center">
+            <h3>Loan Subject to Credit Approval</h3>
+            <p>Enter Personal Information Below</p>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <form method="POST" action="{{url_for('form')}}" role="form" , name="loanform">
+                    <div class="form-group">
+                        <label for="inputPurpose">Is the loan for business purpose?</label>
+                        <select class="form-control" required name="applicantPurpose" id="inputPurpose">
+                            <option value="1">No</option>
+                            <option value="0">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAmount">Loan amount</label>
+                        <input type="text" required class="form-control" id="inputAmount" name="loanAmount"
+                            placeholder="100000">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRate">Rate of interest</label>
+                        <input type="text" required class="form-control" id="inputRate" name="rateInterest"
+                            placeholder="4">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTerm">Loan Term</label>
+                        <input type="text" required class="form-control" id="inputTerm" name="loanTerm"
+                            placeholder="360">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputInterestonly">Is the loan interest only</label>
+                        <select class="form-control" required name="loanInterestonly" id="inputInterestonly">
+                            <option value="1">No</option>
+                            <option value="0">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputValue">Property value</label>
+                        <input type="text" required class="form-control" id="inputValue" name="propertyValue"
+                            placeholder="100000">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputIncome">Income</label>
+                        <input type="text" required class="form-control" id="inputIncome" name="incomeAmount"
+                            placeholder="10000">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputScore">Credit Score</label>
+                        <input type="text" required class="form-control" id="inputScore" name="creditScore"
+                            placeholder="700">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAge">Age</label>
+                        <select class="form-control" required name="applicantAge" id="inputAge">
+                            <option value="5">less than 25</option>
+                            <option value="0">25-34</option>
+                            <option value="1">35-44</option>
+                            <option value="2">45-54</option>
+                            <option value="3">55-64</option>
+                            <option value="4">65-74</option>
+                            <option value="5">above 74</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLtv">Loan to value ratio</label>
+                        <input type="text" required class="form-control" id="inputLtv" name="applicantLtv"
+                            placeholder="70">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDti">Debt to income ratio</label>
+                        <input type="text" required class="form-control" id="inputDti" name="applicantDti"
+                            placeholder="40">
+                    </div>
+                    <input type="submit" value="submit" class="btn btn-default">
+                </form>
+                <br>
+                <h1>Your loan is {{result}}</h1>
+            </div>
+        </div>
+    </div>
+    <!-- End Form Section-->
+    <!-- Footer Section-->
+    <!-- SCRIPT SECTION-->
+<!-- 
+    <script type="text/javascript" src="static/js/plots.js"></script> -->
+
+    <!--Button back to top-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <script>
+
+        /* BACK TO TOP BUTTON SECTION */
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        /* END BACK TO TOP BUTTON SECTION */
+    </script>
+
+    <div class="footer">
+        <H2>U.S LOAN APPROVAL PREDICTION</H2>
+        <p>Created by: Created by: David Salim | Erastus Chirchir | Liu Angela | Phuong Tieu | Brendan Woodward | Dante
+            Company</p>
+    </div>
+</body>
+
+</html>

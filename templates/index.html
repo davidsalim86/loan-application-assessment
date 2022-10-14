@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>U.S LOAN APPROVAL PREDICTION</title>
+
+    <link rel="stylesheet" href="../static/css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Social Icons Style Sheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+
+</head>
+
+
+<!-- Nav Menu Section-->
+<header>
+
+    <div class="center">
+        <h1> U.S LOAN APPROVAL PREDICTION</h1>
+    </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="/static/images/moneylogo.png" alt="Space" class="responsivelogo"
+                        width="50" height=""> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="form.html">Apply Now</a></li>
+                    <li><a href="pairplot.html">Data</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="matrix.html">Matrix</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"></span> Created by: David Salim | Erastus Chirchir | Liu Angela | Phuong Tieu |
+                            Brendan Woodward | Dante Company</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="center">
+        <div class="textcolor">
+            <h3>APPLY FOR A LOAN TODAY</h3>
+            <p>Learn more about loans</p>
+        </div>
+    </div>
+    <!--End Nav Menu Section-->
+</header>
+
+<body>
+    <div class="txtimg">
+        <div class="learnimgsize">
+            <img src="/static/images/cashindex.jpeg" alt="loan" class="" width="2000" height="800">
+        </div>
+    </div>
+    <br>
+    <!-- SCRIPT SECTION-->
+<!-- 
+    <script type="text/javascript" src="static/js/plots.js"></script> -->
+
+    <!--Button back to top-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <script>
+
+        /* BACK TO TOP BUTTON SECTION */
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        /* END BACK TO TOP BUTTON SECTION */
+
+    </script>
+
+    <div class="footer">
+
+        <H2>U.S LOAN APPROVAL PREDICTION</H2>
+
+        <p>Created by: Created by: David Salim | Erastus Chirchir | Liu Angela | Phuong Tieu | Brendan Woodward | Dante
+            Company</p>
+    </div>
+
+
+</body>
+
+</html>
