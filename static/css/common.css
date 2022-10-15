@@ -111,19 +111,19 @@ header > div:hover {
 .pieTitleGroup {
     width: 30px;
     height: 600px;
-    float: left;
-    margin-left: 30px;
-    margin-top: 60px;
+    padding-top: 30px;
 }
 
 .pieTitle {
     width: 90px;
-    height: 200px;
-    float: left;
-    text-align: center;
-    margin-left: 40px;
+    height: 184px;
+}
+
+.pieTitle:nth-child(2) {
+    height: 226px;
 }
 
 .pieTitle span {
     font-size: large;
 }
+

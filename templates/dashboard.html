@@ -54,8 +54,8 @@
             </div>
         </div>
     </nav>
-    <div style="width: 100%;">
-        <div id="bar" style="margin-left:120px; width: 600px;height:400px;float: left;"></div>
+    <div style="width: 100%;overflow: hidden;display: flex;align-items: center;justify-content: space-between;">
+        <div id="bar" style="width: 600px;height: 600px;"></div>
         <div class="pieTitleGroup">
             <div class="pieTitle">
                 <span>CREDIT SCORE</span>
@@ -67,19 +67,7 @@
                 <span>DTI RATIO</span>
             </div>
         </div>
-        <div id="pie" style="margin-left:60px; width: 600px;height:600px;float: left;"></div>
-        <br class="clearBoth" />
-
-        <div style="margin-left:120px; width: 600px;height:200px;float: left; border: 1px solid black;">
-            <p>
-                analysis
-            </p>
-        </div>
-        <div style="margin-left:120px; width: 600px;height:200px;float: left; border: 1px solid black;">
-            <p>
-                analysis
-            </p>
-        </div>
+        <div id="pie" style="width: 600px;height:600px;"></div>
     </div>
 </body>
 <script type="text/javascript">
@@ -183,7 +171,7 @@
     {# define first bar config options #}
     barOption = {
         title: {
-            text: 'Age Group Percentage for Loan Approval(Reject)',
+            text: 'Loan Rejection Rate By Age Group',
             left: 'center',
             textStyle: {
                 color: 'BLACK',
