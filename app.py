@@ -33,6 +33,7 @@ db = SQLAlchemy(app)
 Session = db.sessionmaker(bind=db.engine)
 session = Session()
 
+
 #################################################
 # Flask Routes
 #################################################
@@ -40,51 +41,55 @@ session = Session()
 def home():
     return render_template("index.html")
 
+
 @app.route("/index.html")
 def returnhome():
     return render_template("index.html")
+
 
 @app.route("/form.html")
 def form():
     return render_template("form.html")
 
-@app.route("/form.html", methods=["POST","GET"])
+
+@app.route("/form.html", methods=["POST", "GET"])
 def result():
-    if request.method=="POST":
+    if request.method == "POST":
         array = [x for x in request.form.values()]
         print(input)
-        input_df = pd.DataFrame({'business_or_commercial':[array[0]],
-                        'loan_amount':[array[1]],
-                        'rate_of_interest':[array[2]],
-                        'term':[array[3]],
-                        'interest_only':[array[4]],
-                        'property_value':[array[5]],
-                        'income':[array[6]],
-                        'credit_score':[array[7]],
-                        'age':[array[8]],
-                        'ltv':[array[9]],
-                        'dtir1':[array[10]]})
-        #
+        input_df = pd.DataFrame({'business_or_commercial': [array[0]],
+                                 'loan_amount': [array[1]],
+                                 'rate_of_interest': [array[2]],
+                                 'term': [array[3]],
+                                 'interest_only': [array[4]],
+                                 'property_value': [array[5]],
+                                 'income': [array[6]],
+                                 'credit_score': [array[7]],
+                                 'age': [array[8]],
+                                 'ltv': [array[9]],
+                                 'dtir1': [array[10]]})
         X_scaler = joblib.load('model/standardized.pkl')
         model = joblib.load('model/XGBoost.sav')
         print(len(input_df.columns))
         scaled_values = X_scaler.transform(np.array(input_df))
         predict = model.predict(scaled_values)
-        if predict[0]==1:
+        if predict[0] == 1:
             result = "Approved"
         else:
-            result = "Not approved"    
-    return render_template("form.html",result=result)
+            result = "Not approved"
+    return render_template("form.html", result=result)
 
 
 @app.route("/pairplot.html")
 def compare():
     return render_template("pairplot.html")
 
+
 # go to index.html web page
 @app.route('/matrix.html')
 def index():  # put application's code here
     return render_template("matrix.html")
+
 
 # data model
 class Loan_Data(db.Model):
@@ -104,12 +109,52 @@ class Loan_Data(db.Model):
     dtir1 = db.Column(db.TEXT)
     status = db.Column(db.TEXT)
 
+
+class Matrix_Data(db.Model):
+    __tablename__ = "mytrix_data"
+    index = db.Column(db.Integer, primary_key=True)
+    BaslineName = db.Column(db.TEXT)
+    Accuracy = db.Column(db.REAL)
+    Precision = db.Column(db.REAL)
+    MCC = db.Column(db.REAL)
+    PPV = db.Column(db.REAL)
+    NPV = db.Column(db.REAL)
+    Recall = db.Column(db.REAL)
+    F1 = db.Column(db.REAL)
+    color = db.Column(db.TEXT)
+
+
 # go to dashboard.html web page
 @app.route('/dashboard.html')
 def dashboard():  # put application's code here
     return render_template("dashboard.html")
 
-# return charts data 
+
+@app.route('/matrix')
+def matrix():
+    data_list = getAllMytrixData()
+    return_data = []
+    for obj in data_list:
+        obj_data = {
+            "BaslineName": obj.BaslineName,
+            "Accuracy": obj.Accuracy,
+            "Precision": obj.Precision,
+            "MCC": obj.MCC,
+            "PPV": obj.PPV,
+            "NPV": obj.NPV,
+            "Recall": obj.Recall,
+            "F1": obj.F1,
+        }
+        return_data.append(obj_data)
+
+    return json.dumps({
+        'data': return_data,
+        'msg': 'success',
+        'code': '0000'
+    })
+
+
+# return charts data
 @app.route('/data/charts', methods=['GET'])
 def dataCharts():  # put application's code here
     bar_yAxis = ['<25', '25-34', '35-44', '45-54', '55-64', '65-74', '>74']
@@ -172,6 +217,16 @@ def dataCharts():  # put application's code here
 
 
 ### sqlite database operations
+# find all data of mytrix data
+def getAllMytrixData():
+    try:
+        obj_list = Matrix_Data.query.all()
+        return obj_list
+    except Exception as e:
+        res = {'code': 0, 'message': 'find data list error'}
+        return json.dumps(res, ensure_ascii=False, indent=4)
+
+
 # find pass rate and its count value
 def selectPassRate(age):
     age = str(age)
@@ -240,8 +295,6 @@ def selectDTIRATIO(min, max):
     except Exception as e:
         res = {'code': 0, 'message': 'find data list error'}
         return json.dumps(res, ensure_ascii=False, indent=4)
-
-
 
 
 # data for chartx
