@@ -90,6 +90,11 @@ def compare():
 def index():  # put application's code here
     return render_template("matrix.html")
 
+# @app.route("/performance_matrix")
+# def performance_matrix():
+#     database_df = pd.read_sql(f"Select * from performance_matrix",engine)
+#     data_json = database_df.to_json(orient = 'records')
+#     return data_json
 
 # data model
 class Loan_Data(db.Model):
