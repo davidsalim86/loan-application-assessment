@@ -28,8 +28,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
         <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
-        <script src="../static/js/data.js"></script>
-    
+
         <!-- Our CSS -->
         <link rel="stylesheet" type="text/css" href="static/css/common.css">
     
@@ -273,15 +272,42 @@
 </script>
 
 <script type="text/javascript">
-    window.MyDataIndex = 0
-    window.MyModelName = MyData.map(i => i.BaslineName)
-    window.MyTagName = ['Accuracy', 'Precision', 'MCC', 'PPV', 'NPV', 'Recall']
-    MyData.map((item, index) => $(`<option value="${index}">${item.BaslineName}</option>`).appendTo($('#select')))
+    {# execute when page loads success #}
+    $(document).ready(function () {
+        $.ajax({
+            {# backend api #}
+            url: "/matrix",
+            type: 'get',
+            success: function (result) {
+                console.log(result);
 
-    console.log(MyData);
-    update()
-    initBarChart()
-    initRadarChart()
+                {# parse string to json object #}
+                let dataObj = JSON.parse(result)
+                window.MyData = dataObj.data
+
+                window.MyDataIndex = 0
+                window.MyModelName = window.MyData.map(i => i.BaslineName)
+                window.MyTagName = ['Accuracy', 'Precision', 'MCC', 'PPV', 'NPV', 'Recall']
+                window.MyData.map((item, index) => $(`<option value="${index}">${item.BaslineName}</option>`).appendTo($('#select')))
+
+                console.log(window.MyData);
+                update()
+                initBarChart()
+                initRadarChart()
+            }
+        });
+    });
+
+
+    {#window.MyDataIndex = 0#}
+    {#window.MyModelName = MyData.map(i => i.BaslineName)#}
+    {#window.MyTagName = ['Accuracy', 'Precision', 'MCC', 'PPV', 'NPV', 'Recall']#}
+    {#MyData.map((item, index) => $(`<option value="${index}">${item.BaslineName}</option>`).appendTo($('#select')))#}
+    {##}
+    {#console.log(MyData);#}
+    {#update()#}
+    {#initBarChart()#}
+    {#initRadarChart()#}
 </script>
 
 
