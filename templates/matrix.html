@@ -160,10 +160,10 @@
 
 <script>
     window.update = () => {
-        $('#showId').text(`Model Name.: ${MyData[MyDataIndex].BaslineName}`)
+        $('#showId').text(`Model Name.: ${MyData[MyDataIndex].BaselineName}`)
 
         $('#info').html(`
-            <div><span>BaslineName:</span><span>${MyData[MyDataIndex].BaslineName}</span></div>
+            <div><span>BaselineName:</span><span>${MyData[MyDataIndex].BaselineName}</span></div>
             <div><span>Accuracy:</span><span>${MyData[MyDataIndex].Accuracy}</span></div>
             <div><span>Precision:</span><span>${MyData[MyDataIndex].Precision}</span></div>
             <div><span>MCC:</span><span>${MyData[MyDataIndex].MCC}</span></div>
@@ -222,7 +222,7 @@
         const machineData = MyData.map(i => ({
             color: i.color || 'yellow',
             value: MyTagName.map(_ => i[_]),
-            name: i['BaslineName']
+            name: i['BaselineName']
         }))
 
         const option = {
@@ -285,9 +285,9 @@
                 window.MyData.map((i, index) =>  (i.color = colorArr[index]))
 
                 window.MyDataIndex = 0
-                window.MyModelName = window.MyData.map(i => i.BaslineName)
+                window.MyModelName = window.MyData.map(i => i.BaselineName)
                 window.MyTagName = ['Accuracy', 'Precision', 'MCC', 'PPV', 'NPV', 'Recall']
-                window.MyData.map((item, index) => $(`<option value="${index}">${item.BaslineName}</option>`).appendTo($('#select')))
+                window.MyData.map((item, index) => $(`<option value="${index}">${item.BaselineName}</option>`).appendTo($('#select')))
                
                 update()
                 initBarChart()
@@ -298,9 +298,9 @@
 
 
     {#window.MyDataIndex = 0#}
-    {#window.MyModelName = MyData.map(i => i.BaslineName)#}
+    {#window.MyModelName = MyData.map(i => i.BaselineName)#}
     {#window.MyTagName = ['Accuracy', 'Precision', 'MCC', 'PPV', 'NPV', 'Recall']#}
-    {#MyData.map((item, index) => $(`<option value="${index}">${item.BaslineName}</option>`).appendTo($('#select')))#}
+    {#MyData.map((item, index) => $(`<option value="${index}">${item.BaselineName}</option>`).appendTo($('#select')))#}
     {##}
     {#console.log(MyData);#}
     {#update()#}

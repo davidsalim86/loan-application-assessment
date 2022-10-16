@@ -91,19 +91,19 @@ def gbdtmain(X_train_std, Y_train, X_test_std, Y_test):
 ## evaluate the ml model
 
 
-def evaluate(baslineName,dataset):
+def evaluate(BaselineName,dataset):
     X_train_std, Y_train, X_test_std, Y_test=dataset
-    if baslineName == 'ExtraTrees':
+    if BaselineName == 'ExtraTrees':
         groundtruth, predict, predictprob , model = etmain (X_train_std, Y_train, X_test_std, Y_test)
-    elif baslineName == 'KNeighbors':
+    elif BaselineName == 'KNeighbors':
         groundtruth, predict, predictprob , model= knnmain(X_train_std, Y_train, X_test_std, Y_test)
-    elif baslineName =='XGBoost':
+    elif BaselineName =='XGBoost':
         groundtruth, predict, predictprob , model= xgmain(X_train_std, Y_train, X_test_std, Y_test)
-    elif baslineName =='DecisionTree':
+    elif BaselineName =='DecisionTree':
         groundtruth, predict, predictprob , model = dtmain(X_train_std, Y_train, X_test_std, Y_test)
-    elif baslineName =='RandomForest':
+    elif BaselineName =='RandomForest':
         groundtruth, predict, predictprob , model = rfmain(X_train_std, Y_train, X_test_std, Y_test)
-    elif baslineName =='GradientBoosting':
+    elif BaselineName =='GradientBoosting':
         groundtruth, predict, predictprob , model= gbdtmain(X_train_std, Y_train, X_test_std, Y_test)
     else:
         return
@@ -117,7 +117,7 @@ def evaluate(baslineName,dataset):
     ppv = tp/(tp+fp+1.4E-45)
     npv = tn/(fn+tn+1.4E-45)
     mcc=metrics.matthews_corrcoef(groundtruth, predict)
-    item={'BaslineName':baslineName,'Accuracy':acc,'Precision':precision,'MCC':mcc,'PPV':ppv,'NPV':npv,'Recall':recall,'F1':f1,'TP':tp,'FP':fp,'TN':tn,'FN':fn}
+    item={'BaselineName':BaselineName,'Accuracy':acc,'Precision':precision,'MCC':mcc,'PPV':ppv,'NPV':npv,'Recall':recall,'F1':f1,'TP':tp,'FP':fp,'TN':tn,'FN':fn}
     return groundtruth, predict, predictprob,item  , model
 
 
