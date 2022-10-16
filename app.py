@@ -74,9 +74,9 @@ def result():
         scaled_values = X_scaler.transform(np.array(input_df))
         predict = model.predict(scaled_values)
         if predict[0] == 1:
-            result = "Approved"
+            result = "Your Loan is approved"
         else:
-            result = "Not approved"
+            result = "Your Loan is not approved"
     return render_template("form.html", result=result)
 
 
