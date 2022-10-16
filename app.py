@@ -113,7 +113,7 @@ class Loan_Data(db.Model):
 class Matrix_Data(db.Model):
     __tablename__ = "mytrix_data"
     index = db.Column(db.Integer, primary_key=True)
-    BaselineName = db.Column(db.TEXT)
+    BaslineName = db.Column(db.TEXT)
     Accuracy = db.Column(db.REAL)
     Precision = db.Column(db.REAL)
     MCC = db.Column(db.REAL)
@@ -136,7 +136,7 @@ def matrix():
     return_data = []
     for obj in data_list:
         obj_data = {
-            "BaselineName": obj.BaselineName,
+            "BaslineName": obj.BaslineName,
             "Accuracy": obj.Accuracy,
             "Precision": obj.Precision,
             "MCC": obj.MCC,
