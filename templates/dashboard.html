@@ -193,7 +193,7 @@
                 type: 'bar',
                 itemStyle: {
                     normal: {
-                        // 这里就可以实现，配置柱状图的颜色
+                        
                         color: function (params) {
                             var colorList = ['#de4c4c', '#c101c1', '#917f36', '#E87C25', '#27727B', '#D7504B', '#C7504B'];
                             return colorList[params.dataIndex]
@@ -201,7 +201,7 @@
                         label: {
                             show: true,
                             position: 'inside',
-                            formatter: '{c}%'　　　　//这是关键，在需要的地方加上就行了
+                            formatter: '{c}%'　　　　
                         }
                     },
                 },
@@ -213,17 +213,17 @@
                 }
             }
         ],
-        tooltip: { // 鼠标悬浮提示框显示 X和Y 轴数据
+        tooltip: { 
             trigger: 'axis',
             backgroundColor: 'rgba(32, 33, 36,.7)',
             borderColor: 'rgba(32, 33, 36,0.20)',
             borderWidth: 1,
             formatter: '{c}%',
-            textStyle: { // 文字提示样式
+            textStyle: { 
                 color: '#fff',
                 fontSize: '12'
             },
-            axisPointer: { // 坐标轴虚线
+            axisPointer: { 
                 type: 'cross',
                 label: {
                     backgroundColor: '#6a7985'
