@@ -109,21 +109,29 @@ header > div:hover {
 }
 
 .pieTitleGroup {
-    width: 30px;
+    width: 90px;
     height: 600px;
     padding-top: 30px;
+    margin: 0 0 0 100px;
 }
 
 .pieTitle {
-    width: 90px;
+    width: 180px;
     height: 184px;
 }
 
 .pieTitle:nth-child(2) {
-    height: 226px;
+    height: 230px;
 }
 
 .pieTitle span {
     font-size: large;
+    display: block;
 }
+
+.pieTitle > span:nth-child(2) {
+    font-size: 14px;
+    color: #999;
+}
+
 
