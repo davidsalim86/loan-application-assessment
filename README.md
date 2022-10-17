@@ -39,7 +39,7 @@ A HTML website was created to display our final product, which is a loan applica
 
 The website is deployed using Heroku and can be found at the following link.
 
-https://mlforloan.herokuapp.com/
+https://mlforloan.herokuapp.com
 
 
 ## 4 Conclusion 
