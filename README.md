@@ -1,8 +1,8 @@
 
 # Project 4 – Machine Learning
-# Group 1 - David, Angela, Phuong, Brendan, Erastus, Dante
+Group 1 - David, Angela, Phuong, Brendan, Erastus, Dante
 
-![Machine Learning Project](static/images/cashindex)
+![cashindex](static/images/cashindex)
 
 ## 1 Objective:
 
