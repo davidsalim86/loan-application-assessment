@@ -5,13 +5,13 @@ Group 1 - David, Angela, Phuong, Brendan, Erastus, Dante
 ![Machine Learning](static/images/cashindex.jpeg)
 
 
-## 1 Objective:
+## 1 Objective
 
 
 To create a machine learning model capable of predicting whether a loan application will be successful based on the applicants’ circumstances, including income, loan amount, credit score and property value.   
 
 
-## 2 Dataset Selection:
+## 2 Dataset Selection
 
 
 Our approach is to look for dataset that contains large samples and is roughly normally distributed overall. The dataset used was sourced from American Bank loan application data, showing who was approved for loans based on their various situations, which was gathered from the following web address.
