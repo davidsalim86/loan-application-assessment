@@ -1,5 +1,5 @@
 
-# Project 4 – Machine Learning
+# Project 4 – Machine Learning Model For Loan Approval Prediction
 Group 1 - David, Angela, Phuong, Brendan, Erastus, Dante
 
 ![Machine Learning](static/images/cashindex.jpeg)
