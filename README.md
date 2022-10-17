@@ -30,7 +30,7 @@ To train our model, the preprocessed data was split into train and test data and
 
 * 3.2 Model Development 
 
-The Machine Leaning Algorithms tested were Extra Trees, KNeighbours, XGBoost, Decision Tree, Random Forest and Gradient Boosting. Grid search is used for hyperparameter tuning to maximise the algorithms’ performance. A full result will be included in our report and notebook.
+The Machine Leaning Algorithms tested were Extra Trees, KNeighbours, XGBoost, Decision Tree, Random Forest and Gradient Boosting. Grid search is used for hyperparameter tuning to maximise the algorithms’ performance. The performance result of each algorithm is included in our project report and notebook.
 
 
 * 3.3 User Interface
