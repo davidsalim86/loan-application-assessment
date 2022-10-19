@@ -1,4 +1,4 @@
-
+# This needs to run with clasification jypter notebook
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import normalize
