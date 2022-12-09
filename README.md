@@ -7,7 +7,7 @@ Group 1 - David, Angela, Phuong, Brendan, Erastus, Dante
 
 ## Objective
 
-To create a machine learning model capable of predicting whether a loan application will be successful based on the applicants’ circumstances, including income, loan amount, credit score and property value.   
+To create a machine learning model capable of assessing whether a loan application will be successful based on the applicants’ circumstances, including income, loan amount, credit score and property value.   
 
 
 ## Dataset Selection
