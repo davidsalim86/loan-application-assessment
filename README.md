@@ -1,4 +1,4 @@
-# Loan Approval Prediction
+# Loan Application Assessment
 
 ## Group Member
 
