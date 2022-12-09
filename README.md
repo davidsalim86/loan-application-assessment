@@ -2,7 +2,7 @@
 
 ## Group Member
 
-Group 1 - David, Angela, Phuong, Brendan, Erastus, Dante
+David, Angela, Phuong, Brendan, Erastus, Dante
 
 
 ## Objective
